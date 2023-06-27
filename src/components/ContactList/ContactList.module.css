@@ -1,0 +1,37 @@
+.ContactList{
+    display: flex;
+    flex-direction: column;
+     padding: 10px 40px;
+}
+.ContactItem{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.ContactItem::before {
+    content: "📞";
+    position: absolute;
+    left: -25px; 
+  }
+  .wrap{
+    display: flex;
+    gap:10px;
+    width: 300px;
+  } 
+.ContactBtn{
+    display: inline-block;
+
+    margin-left: 15px;
+    width: 70px;
+}
+.ContactBtn:hover,
+.ContactBtn:focus{
+    background: rgb(232, 223, 223);
+    border: 1px solid  rgb(80, 75, 75);
+    border-radius: 2px;
+    padding: 2px;
+    cursor: pointer;
+}

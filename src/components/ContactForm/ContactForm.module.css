@@ -1,0 +1,28 @@
+.form{
+    display: flex;
+    flex-direction: column;
+     border: 2px solid  rgb(232, 223, 223);
+     padding: 10px 15px;
+     margin-bottom: 20px;
+}
+
+.inputName, 
+.inputNumber{
+   width: 200px;
+   margin-bottom: 5px;
+}
+
+
+.formBtn{
+   width: 100px; 
+   margin-top: 10px; 
+}
+
+.formBtn:hover,
+ .formBt:focus{
+    background: rgb(232, 223, 223);
+    border: 1px solid  rgb(80, 75, 75);
+    border-radius: 2px;
+    padding: 2px;
+    cursor: pointer;
+}
