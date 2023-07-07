@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from "prop-types";
 import shortid from 'shortid';
 import css from './ContactForm.module.css'
@@ -6,7 +6,10 @@ import css from './ContactForm.module.css'
 const ContactForm = ({onSubmitProps}) => {
  const [name, setName] = useState('')
  const [number, setNumber] = useState('')
-
+const inputNameRef = useRef(null)
+useEffect(()=>{
+  inputNameRef.current.focus()
+},[])
   const handleInputChange=(event)=>{
 
   const {name, value} = event.target
@@ -44,6 +47,7 @@ const reset=()=>{
               onChange={handleInputChange}
               type="text"
               name="name"
+              ref={inputNameRef}
               id={nameInputId}
               pattern="^[A-Za-z\u0080-\uFFFF ']+$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
