@@ -12,18 +12,3 @@ export const store = createStore(rootReducer, enhancer)
 
 
 
-
-
-// import { configureStore } from "@reduxjs/toolkit";
-// import phoneBookReducer from "./phoneBookSlice";
-
-// import {reducer as rootReducer} from './reducer'
-
-// export default configureStore({
-//     reducer: {
-//         contacts: phoneBookReducer,
-//     }
-// }) 
-
-
-

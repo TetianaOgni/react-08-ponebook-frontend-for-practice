@@ -1,15 +1,10 @@
-// import { useSelector,} from "react-redux/es/hooks/useSelector";
-
-
 import PropTypes from "prop-types";
 import css from './ContactList.module.css'
 
 
 
 const ContactList = ({contacts, onDeleteContact}) => {
-  // const ContactList = ({onDeleteContact}) => {
-  // const contacts = useSelector(state => state.contacts.contacts)
-
+  
  return (
 
    <ul className={css.ContactList}>
