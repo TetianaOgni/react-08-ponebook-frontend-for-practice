@@ -40,7 +40,7 @@ const App = ()=> {
  const onAddContact=(data)=>{
 
     const { name} = data;
-    const isExist = contacts.some(contact => 
+    const isExist = contacts.some(contact => contact.name && 
     contact.name.toLowerCase() === name.toLowerCase());
 
     if (isExist) {
@@ -66,7 +66,7 @@ const App = ()=> {
 
   const  getVisibleContacts = () => {
     const normalizeFilter = filter.toLocaleLowerCase()
-   return  contacts.filter(contact => contact.name.toLowerCase().includes(normalizeFilter))    
+   return  contacts.filter(contact => contact.name && contact.name.toLowerCase().includes(normalizeFilter))    
   }
   const visibleContacts = getVisibleContacts()
 
