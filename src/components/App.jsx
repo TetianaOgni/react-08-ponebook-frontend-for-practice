@@ -1,7 +1,6 @@
-// import React, { useState,  } from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import{setFilter, setContacts, removeContact} from '../redux/phoneBookReducer'
+import{ addContacts, removeContact, filterContacts,} from '../redux/phoneBookSlice'
 import PropTypes from "prop-types";
 import shortid from 'shortid';
 import ContactForm from './ContactForm';
@@ -12,9 +11,7 @@ import css from './App.module.css'
 
 
 const App = ()=> {
-  // const [contacts, setContacts] = useState([])
-  // const [filter, setFilter] = useState('')
-  
+ 
   const contacts = useSelector((state) =>  { 
     console.log("state", state)
     return state.phoneBook.contacts
@@ -24,25 +21,25 @@ const App = ()=> {
   })
   const dispatch = useDispatch()
 
-  // localStorage не работает 
-useEffect(()=>{
+  // localStorage не працює, ще не перероблювала 
+// useEffect(()=>{
 
-  const storedContacts = localStorage.getItem('contacts')
-  const parsedContacts = JSON.parse(storedContacts)
-  if(parsedContacts){
-   dispatch(setContacts(parsedContacts))
-  //  dispatch({type: "phoneContacts/setContacts", payload: parsedContacts}) 
-  // setContacts(parsedContacts)
-}
-},[dispatch])
+//   const storedContacts = localStorage.getItem('contacts')
+//   const parsedContacts = JSON.parse(storedContacts)
+//   if(parsedContacts){
+//    dispatch(addContacts(parsedContacts))
+//   //  dispatch({type: "phoneContacts/setContacts", payload: parsedContacts}) 
+//   // setContacts(parsedContacts)
+// }
+// },[dispatch])
 
-useEffect(()=>{  
-  localStorage.setItem('contacts', JSON.stringify(contacts))
-}, [contacts])
+// useEffect(()=>{  
+//   localStorage.setItem('contacts', JSON.stringify(contacts))
+// }, [contacts])
 
  const onAddContact=(data)=>{
 
-    const { name } = data;
+    const { name} = data;
     const isExist = contacts.some(contact => 
     contact.name.toLowerCase() === name.toLowerCase());
 
@@ -55,19 +52,16 @@ useEffect(()=>{
       ...data,
       id: shortid.generate(), 
     }
-    dispatch(setContacts([...contacts, contactData]))
-    // dispatch({type: "phoneContacts/setContacts", payload: [...contacts, contactData]});
+    dispatch(addContacts([...contacts, contactData]))
   }
 
  const onRemoveContact = contactId => {
     dispatch(removeContact(contactId));
-    // dispatch({type: "phoneContacts/removeContact", payload: contactId})
-    // setContacts(contacts.filter(contact => contact.id !== contactID))
+    
   };
   const changeFilter = event=>{
-    dispatch(setFilter(event.currentTarget.value));
-    // dispatch({type:"phoneContacts/setFilter", payload: event.currentTarget.value});
-    // setFilter(event.currentTarget.value)
+    dispatch(filterContacts(event.currentTarget.value));
+   
   }
 
   const  getVisibleContacts = () => {
@@ -99,4 +93,9 @@ useEffect(()=>{
         
       }
   export default App;
+
+
+
+
+
 
