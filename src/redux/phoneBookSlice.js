@@ -20,13 +20,11 @@ import { createSlice } from "@reduxjs/toolkit"
     filterContacts: (state, action)=> {
                 state.contacts = [...state.contacts, action.payload]
     },
-    }
+     }
    }
    )
 export const { addContacts, removeContact, filterContacts} = phoneBookSlice.actions
 export default phoneBookSlice.reducer;  
-
-
 //    setContacts setFilter замінила на addContacts filterContacts
    // export const phoneBookReducer = (state = initialState, action) => {
    //     switch(action.type){
