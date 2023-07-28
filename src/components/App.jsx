@@ -1,4 +1,3 @@
-// import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import{ addContacts, removeContact, filterContacts,} from '../redux/phoneBookSlice'
 import PropTypes from "prop-types";
@@ -13,7 +12,6 @@ import css from './App.module.css'
 const App = ()=> {
  
   const contacts = useSelector((state) =>  { 
-    console.log("state", state)
     return state.phoneBook.contacts
   })
   const filter = useSelector((state) =>  {
@@ -21,21 +19,7 @@ const App = ()=> {
   })
   const dispatch = useDispatch()
 
-  // localStorage не працює, ще не перероблювала 
-// useEffect(()=>{
-
-//   const storedContacts = localStorage.getItem('contacts')
-//   const parsedContacts = JSON.parse(storedContacts)
-//   if(parsedContacts){
-//    dispatch(addContacts(parsedContacts))
-//   //  dispatch({type: "phoneContacts/setContacts", payload: parsedContacts}) 
-//   // setContacts(parsedContacts)
-// }
-// },[dispatch])
-
-// useEffect(()=>{  
-//   localStorage.setItem('contacts', JSON.stringify(contacts))
-// }, [contacts])
+ 
 
  const onAddContact=(data)=>{
 
@@ -52,7 +36,9 @@ const App = ()=> {
       ...data,
       id: shortid.generate(), 
     }
-    dispatch(addContacts([...contacts, contactData]))
+   
+    dispatch(addContacts(contactData))
+
   }
 
  const onRemoveContact = contactId => {
