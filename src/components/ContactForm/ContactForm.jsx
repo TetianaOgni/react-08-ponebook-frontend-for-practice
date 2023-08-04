@@ -28,7 +28,6 @@ useEffect(()=>{
         number: number,}
 
    onSubmitProps(contactData)
-   console.log("dataFromForm", contactData)
    
    reset()
 }

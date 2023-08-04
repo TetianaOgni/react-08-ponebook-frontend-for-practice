@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from 'react-redux';
-// import{ removeContact} from '../redux/contactsSlice'
 import{filterContacts,} from '../redux/filterSlice'
 
 import { useEffect} from 'react';
@@ -7,7 +6,6 @@ import { selectContacts, selectFilter } from 'redux/selectors';
 import { deleteContactsThunk, fetchContactsThunk, postContactsThunk } from '../services/operations';
 
 import PropTypes from "prop-types";
-// import shortid from 'shortid';
 import ContactForm from './ContactForm';
 import Filter  from './Filter';
 import ContactList from './ContactList';
@@ -18,19 +16,12 @@ const App = ()=> {
   const dispatch = useDispatch()
   const{ contacts, isLoading, error, } = useSelector(selectContacts)
   
-  // const contacts = useSelector((state) => state.contacts)
-  // console.log("state", contacts)
   const {filter} = useSelector(selectFilter)
-  console.log("1state", contacts)
-  // console.log("2state", isLoading)
-  // console.log("3state", error)
-  // console.log("4state", filter )
 
-   useEffect(()=> {
+
+useEffect(()=> {
   dispatch(fetchContactsThunk())
  }, [dispatch])
-
-
 
  const onAddContact=(data)=>{
 
@@ -42,24 +33,10 @@ const App = ()=> {
       alert(`${name} is already in contacts.`);
       return;
     }
-  
-    // const contactData = {
-    //   ...data,
-    //   id: shortid.generate(), 
-    // }
-    console.log("data", data)
    dispatch(postContactsThunk(data))
-  //  await dispatch(addContacts(contactData))
-
   }
 
-//  const onRemoveContact = async(contactId) => {
-//   console.log("contactId", contactId)
-//    await dispatch(deleteContactsThunk(contactId))
-//    await dispatch(removeContact(contactId));
-//   };
   const onRemoveContact = (contactId) => {
-    console.log("contactId", contactId)
      dispatch(deleteContactsThunk(contactId))
     };
 
@@ -68,14 +45,12 @@ const App = ()=> {
   }
 
   const  getVisibleContacts = () => {
-    console.log("contacts",contacts)
     const normalizeFilter = typeof filter === "string" ? filter.toLocaleLowerCase() : "";
    return contacts ? contacts.filter(
     contact => contact.name &&
     contact.name.toLowerCase().includes(normalizeFilter)) : [];    
   }
   const visibleContacts = getVisibleContacts()
-  console.log("visibleContacts", visibleContacts)
 
   return (
         <div className={css.App}>
@@ -98,7 +73,6 @@ const App = ()=> {
           })
         ),
         filter: PropTypes.string,
-        
       }
   export default App;
 
