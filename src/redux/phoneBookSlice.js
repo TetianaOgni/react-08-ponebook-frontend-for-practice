@@ -26,11 +26,11 @@
 // export default phoneBookSlice.reducer; 
 
 
-import {combineReducers} from "redux"
-import contactsReducer from "./contactsSlice";
-import filterReducer from "./filterSlice";
-const phoneBookSlice = combineReducers({
-   contacts: contactsReducer,
-   filter: filterReducer,
-})
-export default phoneBookSlice.reducer; 
+// import {combineReducers} from "redux"
+// import contactsReducer from "./contactsSlice";
+// import filterReducer from "./filterSlice";
+// const phoneBookSlice = combineReducers({
+//    contacts: contactsReducer,
+//    filter: filterReducer,
+// })
+// export default phoneBookSlice.reducer; 
