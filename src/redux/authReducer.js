@@ -18,12 +18,10 @@ const authSlice = createSlice({
    .addCase(registerUserThunk.pending, state => {
     state.isLoading = true;
     state.error = null;
-    state.authenticated = false;
    })
    .addCase(registerUserThunk.fulfilled, (state, action) => {
     state.isLoading = false;
-    // state.authenticated = true;
-    console.log("register", action)
+    state.authenticated = true;
     state.userData = action.payload.user;
     state.token = action.payload.token
    })
@@ -35,12 +33,11 @@ const authSlice = createSlice({
    .addCase(loginUserThunk.pending, state => {
     state.isLoading = true;
     state.error = null;
-    state.authenticated = false;
+    state.authenticated = true;
    })
    .addCase(loginUserThunk.fulfilled, (state, action) => {
     state.isLoading = false;
     state.authenticated = true;
-    console.log("login", action.payload)
     state.userData = action.payload.user;
     state.token = action.payload.token
    })
@@ -56,7 +53,6 @@ const authSlice = createSlice({
    .addCase(refreshUserThunk.fulfilled, (state, action) => {
     state.isLoading = false;
     state.authenticated = true;
-    console.log("2refresh", action.payload)
     state.userData = action.payload;
    })
    .addCase(refreshUserThunk.rejected, (state, action) => {
@@ -71,7 +67,6 @@ const authSlice = createSlice({
        .addCase(logoutUserThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = false;
-        console.log("logout", action.payload)
         state.userData = null;
         state.token = null;
        })

@@ -8,9 +8,12 @@ const $instance = axios.create({
 export const setToken = token => {
     $instance.defaults.headers['Authorization'] = `Bearer ${token}`
 }
+// export const clearToken = () => {
+//     $instance.defaults.headers['Authorization'] = ''
+// }
 export const clearToken = () => {
-    $instance.defaults.headers['Authorization'] = ''
-}
+    $instance.defaults.headers['Authorization'] = '';
+  };
 
 export const registerUserThunk = createAsyncThunk(
     'auth/register', 
@@ -36,6 +39,7 @@ export const loginUserThunk = createAsyncThunk(
              const {data} = await $instance.post('/users/login', userData)
              console.log(data)
              setToken(data.token);
+        
              return data
             }
             catch(error){
@@ -52,7 +56,6 @@ export const loginUserThunk = createAsyncThunk(
          setToken(token)
          const {data} = await $instance.get('/users/current')
          console.log("refresh", data)
-         setToken(data.token);
          return data
         }
         catch(error){
