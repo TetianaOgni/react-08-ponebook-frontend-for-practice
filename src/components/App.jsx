@@ -1,9 +1,9 @@
 import { Suspense, lazy, useEffect } from "react";
 import {NavLink, Route, Routes} from 'react-router-dom'
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
+  // Breadcrumb,
+  // BreadcrumbItem,
+  // BreadcrumbLink,
   Button,
 } from '@chakra-ui/react'
 import { useDispatch, useSelector } from "react-redux";
@@ -36,37 +36,44 @@ const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
     <div>
       <header>
         <nav>
-          <NavLink to='/'>Home</NavLink>
+          <NavLink to='/'>Home...</NavLink>
           {authenticated ? (
           <>
-          <NavLink to='/contacts'>Contacts</NavLink>
+          <NavLink to='/contacts'>Contacts...</NavLink>
           <Button onClick={handleLogout}>LOGOUT</Button>
-          </>
-          ) : (
+          </>) : (
             <>
-            <NavLink to='/register'>Register</NavLink>
-            <NavLink to='/login'>Login</NavLink>
+            <NavLink to='/register'>Register...</NavLink>
+            <NavLink to='/login'>Login...</NavLink>
             </>
           )
           }
           
-        <Breadcrumb fontWeight='medium' fontSize='sm'>
-          <BreadcrumbItem>
-            <BreadcrumbLink to='/'>HOME</BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink to='/register'>REGISTER</BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem >
-            <BreadcrumbLink to='/login'>LOAGIN</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem >
-            <BreadcrumbLink to='/contacts'>CONTACTS</BreadcrumbLink>
-          </BreadcrumbItem>
-        </Breadcrumb>
+        {/* <Breadcrumb fontWeight='medium' fontSize='sm'>
         
+          <BreadcrumbItem>
+            <BreadcrumbLink as={NavLink} to='/'>HOME</BreadcrumbLink>
+          </BreadcrumbItem>
+          {authenticated ? (
+          <>
+            <BreadcrumbItem >
+              <BreadcrumbLink as={NavLink} to='/register'>REGISTER</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem >
+              <BreadcrumbLink as={NavLink} to='/login'>LOAGIN</BreadcrumbLink>
+            </BreadcrumbItem>
+          </>
+          ):(
+          <>
+          <BreadcrumbItem >
+            <BreadcrumbLink as={NavLink} to='/contacts'>CONTACTS</BreadcrumbLink>
+          </BreadcrumbItem>
+          <Button onClick={handleLogout}>LOGOUT</Button>
+          </>
+          )} 
+          
+        </Breadcrumb> */}
         </nav>
       </header>  
       <main>
@@ -164,4 +171,27 @@ export default App
 //         filter: PropTypes.string,
 //       }
 //   export default App;
+
+// <Breadcrumb fontWeight='medium' fontSize='sm'>
+        
+// <BreadcrumbItem>
+//   <BreadcrumbLink as={NavLink} to='/'>HOME</BreadcrumbLink>
+// </BreadcrumbItem>
+
+//   <BreadcrumbItem isCurrentPage>
+//     <BreadcrumbLink as={NavLink} to='/register'>REGISTER</BreadcrumbLink>
+//   </BreadcrumbItem>
+
+//   <BreadcrumbItem >
+//     <BreadcrumbLink as={NavLink} to='/login'>LOAGIN</BreadcrumbLink>
+//   </BreadcrumbItem>
+// </>
+
+// <BreadcrumbItem >
+//   <BreadcrumbLink as={NavLink} to='/contacts'>CONTACTS</BreadcrumbLink>
+// </BreadcrumbItem>
+// <Button onClick={handleLogout}>LOGOUT</Button>
+
+
+// </Breadcrumb>
 
