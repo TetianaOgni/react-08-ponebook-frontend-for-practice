@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[246],{6246:function(e,t,n){n.r(t);n(2791);var o=n(3329);t.default=function(){return(0,o.jsx)("div",{children:"Phonebook Contacts"})}}}]);
+//# sourceMappingURL=246.d737be5d.chunk.js.map
