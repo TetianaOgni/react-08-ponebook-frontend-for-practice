@@ -1,22 +1,27 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerUserThunk } from "redux/operations";
 import { useFormik } from "formik";
 import {
   Box,
   Button,
+  css,
   Flex,
   FormControl,
   FormLabel,
   Input,
   VStack
 } from "@chakra-ui/react";
-
+import { selectAuthenticated } from "redux/authReducer";
+import { Navigate } from "react-router-dom";
+// import css from "../index.css"
 
 const RegisterPage = () => {
 
   const dispatch = useDispatch()
 
+  const authenticated = useSelector(selectAuthenticated)
+  
       const formik = useFormik({
         initialValues: {
           name: "",  
@@ -30,9 +35,10 @@ const RegisterPage = () => {
     
         }
       });
-
+  if (authenticated) return < Navigate to='/contacts' />  
       return (
         <Flex bg="gray.100" align="center" justify="center" h="100vh">
+          <div className={css.Container}>
           <Box bg="white" p={6} rounded="md">
             <form onSubmit={formik.handleSubmit}>
               <VStack spacing={4} align="flex-start">
@@ -80,6 +86,7 @@ const RegisterPage = () => {
               </VStack>
             </form>
           </Box>
+          </div>
         </Flex>
     
       )

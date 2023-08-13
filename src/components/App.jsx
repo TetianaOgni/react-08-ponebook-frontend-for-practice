@@ -1,14 +1,14 @@
 import { Suspense, lazy, useEffect } from "react";
 import {NavLink, Route, Routes} from 'react-router-dom'
 import {
-  // Breadcrumb,
-  // BreadcrumbItem,
-  // BreadcrumbLink,
   Button,
+  Stack,
 } from '@chakra-ui/react'
 import { useDispatch, useSelector } from "react-redux";
 import { selectAuthenticated, selectToken } from "redux/authReducer";
 import { logoutUserThunk, refreshUserThunk } from "redux/operations";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+import css from "./App.module.css"
 
 
 const HomePage = lazy(()=> import ("pages/HomePage"))
@@ -17,44 +17,83 @@ const LoginPage = lazy(()=> import ("pages/LoginPage"))
 const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
 
 
- const App = () =>{
+ const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const authenticated = useSelector(selectAuthenticated)
 
   useEffect(() => {
-    if (!token) return;
+    if (!token || authenticated) return;
 
     dispatch(refreshUserThunk());
-  }, [token, dispatch]);
+  }, [token, dispatch, authenticated]);
 
   const handleLogout = () => {
     dispatch(logoutUserThunk())
   }
 
   return (
-    <div>
-      <header>
-        <nav>
-          <NavLink to='/'>Home...</NavLink>
-          {authenticated ? (
-          <>
-          <NavLink to='/contacts'>Contacts...</NavLink>
-          <Button onClick={handleLogout}>LOGOUT</Button>
-          </>) : (
-            <>
-            <NavLink to='/register'>Register...</NavLink>
-            <NavLink to='/login'>Login...</NavLink>
-            </>
-          )
-          }
-          
-        {/* <Breadcrumb fontWeight='medium' fontSize='sm'>
-        
+    <div >
+      <header 
+      // className={css.Container}
+      >
+       <nav>
+       <Stack direction='row' spacing={4} align='center'
+        p={{base:"5px", md:"10px", lg:"15px", xl:"20px"}}
+        fontSize={{base:"5px", md:"10px", lg:"15px", xl:"20px"}}
+         >
+          <Button colorScheme='teal' variant='link'as={NavLink} to='/'>
+          HOME
+          </Button>
+            {authenticated ? (
+              <>
+              <Button colorScheme='teal' variant='link' as={NavLink} to='/contacts'>
+                    CONTACTS
+                  </Button>
+                  <Button colorScheme='teal' variant='link' onClick={handleLogout} >
+                    LOGOUT
+                  </Button>
+              </> 
+             ) : (
+              <>
+                <Button colorScheme='teal' variant='link' as={NavLink} to='/register'>
+                  REGISTER
+                </Button>
+                <Button colorScheme='teal' variant='link' as={NavLink} to='/login'>
+                  LOAGIN
+                </Button>
+              </>
+            )}
+       </Stack>
+       </nav>
+      </header>  
+      <main>
+        <Suspense>
+          <Routes>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/register' element={<RegisterPage/>}/>
+            <Route path='/login' element={<LoginPage/>}/>
+            <Route path='/contacts' element={
+              <PrivateRoute redirectTo='/login'>
+                <ContactsPage/>
+              </PrivateRoute>
+            }/>
+          </Routes>
+        </Suspense>
+      </main>
+      </div>
+  );
+}
+export default App
+
+
+ {/* <nav>
+        <Breadcrumb fontWeight='medium' fontSize='sm'>
+
           <BreadcrumbItem>
             <BreadcrumbLink as={NavLink} to='/'>HOME</BreadcrumbLink>
           </BreadcrumbItem>
-          {authenticated ? (
+          {!authenticated ? (
           <>
             <BreadcrumbItem >
               <BreadcrumbLink as={NavLink} to='/register'>REGISTER</BreadcrumbLink>
@@ -73,27 +112,8 @@ const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
           </>
           )} 
           
-        </Breadcrumb> */}
-        </nav>
-      </header>  
-      <main>
-        <Suspense>
-          <Routes>
-            <Route path='/' element={<HomePage/>}/>
-            <Route path='/register' element={<RegisterPage/>}/>
-            <Route path='/login' element={<LoginPage/>}/>
-            <Route path='/contacts' element={<ContactsPage/>}/>
-          </Routes>
-        </Suspense>
-      </main>
-      </div>
-    
-  );
-}
-export default App
-
-
-
+        </Breadcrumb>
+        </nav> */}
 // import { useSelector, useDispatch } from 'react-redux';
 // import{filterContacts,} from '../redux/filterSlice'
 
@@ -195,3 +215,31 @@ export default App
 
 // </Breadcrumb>
 
+// рабочий вариант 
+ {/* {!authenticated && (<Button colorScheme='teal' variant='link' as={NavLink} to='/register'>
+              REGISTER
+            </Button>)}
+            {!authenticated && (<Button colorScheme='teal' variant='link' as={NavLink} to='/login'>
+              LOAGIN
+            </Button>)}
+            {authenticated && (<Button colorScheme='teal' variant='link' as={NavLink} to='/contacts'>
+                CONTACTS
+              </Button>)}
+             {authenticated && ( <Button colorScheme='teal' variant='link' onClick={handleLogout} >LOGOUT
+              </Button>)} */}
+
+
+              // ----тоже работает но без стилей 
+               {/* <nav> */}
+          {/* <NavLink to='/'>Home...</NavLink> */}
+          {/* {authenticated ? (
+          <>
+          <NavLink to='/contacts'>Contacts...</NavLink>
+          <Button onClick={handleLogout}>LOGOUT</Button>
+          </>) : (
+            <>
+            <NavLink to='/register'>Register...</NavLink>
+            <NavLink to='/login'>Login...</NavLink>
+            </>
+          )
+          } */}

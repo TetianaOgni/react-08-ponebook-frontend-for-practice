@@ -1,4 +1,4 @@
-/* .form{
+ .form{
     display: flex;
     flex-direction: column;
      border: 2px solid  rgb(232, 223, 223);
@@ -10,6 +10,8 @@
 .inputNumber{
    width: 200px;
    margin-bottom: 5px;
+   outline: 1px solid rgb(154, 152, 152);
+   border-radius: 3px;
 }
 
 
@@ -25,4 +27,4 @@
     border-radius: 2px;
     padding: 2px;
     cursor: pointer;
-} */
+} 

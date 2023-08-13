@@ -33,7 +33,6 @@ const authSlice = createSlice({
    .addCase(loginUserThunk.pending, state => {
     state.isLoading = true;
     state.error = null;
-    state.authenticated = true;
    })
    .addCase(loginUserThunk.fulfilled, (state, action) => {
     state.isLoading = false;

@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://TetianaOgni.github.io/goit-react-hw-08-phonebook/",
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.0",
     "@chakra-ui/react": "^2.8.0",
     "@redux-devtools/extension": "^3.2.5",
     "@reduxjs/toolkit": "^1.9.5",
