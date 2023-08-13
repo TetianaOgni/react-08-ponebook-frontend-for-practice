@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAuthenticated, selectToken } from "redux/authReducer";
 import { logoutUserThunk, refreshUserThunk } from "redux/operations";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
-import css from "./App.module.css"
+// import css from "./App.module.css"
 
 
 const HomePage = lazy(()=> import ("pages/HomePage"))
@@ -87,33 +87,33 @@ const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
 export default App
 
 
- {/* <nav>
-        <Breadcrumb fontWeight='medium' fontSize='sm'>
+//  {/* <nav>
+//         <Breadcrumb fontWeight='medium' fontSize='sm'>
 
-          <BreadcrumbItem>
-            <BreadcrumbLink as={NavLink} to='/'>HOME</BreadcrumbLink>
-          </BreadcrumbItem>
-          {!authenticated ? (
-          <>
-            <BreadcrumbItem >
-              <BreadcrumbLink as={NavLink} to='/register'>REGISTER</BreadcrumbLink>
-            </BreadcrumbItem>
+//           <BreadcrumbItem>
+//             <BreadcrumbLink as={NavLink} to='/'>HOME</BreadcrumbLink>
+//           </BreadcrumbItem>
+//           {!authenticated ? (
+//           <>
+//             <BreadcrumbItem >
+//               <BreadcrumbLink as={NavLink} to='/register'>REGISTER</BreadcrumbLink>
+//             </BreadcrumbItem>
 
-            <BreadcrumbItem >
-              <BreadcrumbLink as={NavLink} to='/login'>LOAGIN</BreadcrumbLink>
-            </BreadcrumbItem>
-          </>
-          ):(
-          <>
-          <BreadcrumbItem >
-            <BreadcrumbLink as={NavLink} to='/contacts'>CONTACTS</BreadcrumbLink>
-          </BreadcrumbItem>
-          <Button onClick={handleLogout}>LOGOUT</Button>
-          </>
-          )} 
+//             <BreadcrumbItem >
+//               <BreadcrumbLink as={NavLink} to='/login'>LOAGIN</BreadcrumbLink>
+//             </BreadcrumbItem>
+//           </>
+//           ):(
+//           <>
+//           <BreadcrumbItem >
+//             <BreadcrumbLink as={NavLink} to='/contacts'>CONTACTS</BreadcrumbLink>
+//           </BreadcrumbItem>
+//           <Button onClick={handleLogout}>LOGOUT</Button>
+//           </>
+//           )} 
           
-        </Breadcrumb>
-        </nav> */}
+//         </Breadcrumb>
+//         </nav> */}
 // import { useSelector, useDispatch } from 'react-redux';
 // import{filterContacts,} from '../redux/filterSlice'
 
@@ -216,30 +216,30 @@ export default App
 // </Breadcrumb>
 
 // рабочий вариант 
- {/* {!authenticated && (<Button colorScheme='teal' variant='link' as={NavLink} to='/register'>
-              REGISTER
-            </Button>)}
-            {!authenticated && (<Button colorScheme='teal' variant='link' as={NavLink} to='/login'>
-              LOAGIN
-            </Button>)}
-            {authenticated && (<Button colorScheme='teal' variant='link' as={NavLink} to='/contacts'>
-                CONTACTS
-              </Button>)}
-             {authenticated && ( <Button colorScheme='teal' variant='link' onClick={handleLogout} >LOGOUT
-              </Button>)} */}
+//  {/* {!authenticated && (<Button colorScheme='teal' variant='link' as={NavLink} to='/register'>
+//               REGISTER
+//             </Button>)}
+//             {!authenticated && (<Button colorScheme='teal' variant='link' as={NavLink} to='/login'>
+//               LOAGIN
+//             </Button>)}
+//             {authenticated && (<Button colorScheme='teal' variant='link' as={NavLink} to='/contacts'>
+//                 CONTACTS
+//               </Button>)}
+//              {authenticated && ( <Button colorScheme='teal' variant='link' onClick={handleLogout} >LOGOUT
+//               </Button>)} */}
 
 
               // ----тоже работает но без стилей 
-               {/* <nav> */}
-          {/* <NavLink to='/'>Home...</NavLink> */}
-          {/* {authenticated ? (
-          <>
-          <NavLink to='/contacts'>Contacts...</NavLink>
-          <Button onClick={handleLogout}>LOGOUT</Button>
-          </>) : (
-            <>
-            <NavLink to='/register'>Register...</NavLink>
-            <NavLink to='/login'>Login...</NavLink>
-            </>
-          )
-          } */}
+          //      {/* <nav> */}
+          // {/* <NavLink to='/'>Home...</NavLink> */}
+          // {/* {authenticated ? (
+          // <>
+          // <NavLink to='/contacts'>Contacts...</NavLink>
+          // <Button onClick={handleLogout}>LOGOUT</Button>
+          // </>) : (
+          //   <>
+          //   <NavLink to='/register'>Register...</NavLink>
+          //   <NavLink to='/login'>Login...</NavLink>
+          //   </>
+          // )
+          // } */}

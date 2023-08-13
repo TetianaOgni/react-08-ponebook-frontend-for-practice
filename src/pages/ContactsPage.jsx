@@ -12,7 +12,7 @@ import ContactList from 'components/ContactList';
 import{filterContacts,} from '../redux/filterSlice'
 import ContactForm from 'components/ContactForm';
 import { selectAuthenticated } from 'redux/authReducer';
-import css from "./ContactsPage.module.css"
+// import css from "./ContactsPage.module.css"
 import { Box } from '@chakra-ui/react';
 
 const ContactsPage = () => {

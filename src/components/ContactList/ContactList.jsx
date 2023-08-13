@@ -62,12 +62,12 @@ ContactList.propTypes = {
 
 export default ContactList
 
- {/* <div  
-       className={css.Wrap}
-       >
-            <p className={css.ContactName}>{name}:</p>
-            <span className={css.ContactNumber}>{number}</span> 
-           </div>  */}
+//  {/* <div  
+//        className={css.Wrap}
+//        >
+//             <p className={css.ContactName}>{name}:</p>
+//             <span className={css.ContactNumber}>{number}</span> 
+//            </div>  */}
  //  <ul className={css.ContactList}>
   //  {contacts.map(({name, number, id}) => (
   //         <li key={id} className={css.ContactItem}>

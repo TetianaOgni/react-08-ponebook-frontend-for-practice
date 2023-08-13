@@ -67,19 +67,19 @@ Filter.propTypes = {
 
 export default Filter
 
-{/* <Box bg="white" pt={2} pb={4} pl={5} pr={2} rounded="md" w={260}>
-         <form >
-           <VStack spacing={4} align="flex-start">
-           <FormControl>
-               <FormLabel htmlFor="number">Find contacts by number
-                <Input
-                  type="number"
-                  onChange={onChange}
-                  variant="filled"
-                  value={value}
-                />
-               </FormLabel>
-             </FormControl>
-            </VStack>
-         </form>
-       </Box> */}
+// {/* <Box bg="white" pt={2} pb={4} pl={5} pr={2} rounded="md" w={260}>
+//          <form >
+//            <VStack spacing={4} align="flex-start">
+//            <FormControl>
+//                <FormLabel htmlFor="number">Find contacts by number
+//                 <Input
+//                   type="number"
+//                   onChange={onChange}
+//                   variant="filled"
+//                   value={value}
+//                 />
+//                </FormLabel>
+//              </FormControl>
+//             </VStack>
+//          </form>
+//        </Box> */}
