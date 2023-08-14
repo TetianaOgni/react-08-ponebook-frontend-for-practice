@@ -63,13 +63,13 @@ useEffect(()=> {
     <Box display={{lg:"flex"}}
     gap={{lg:"50px"}}
     justifyContent= {{lg:"center"}}
-    // display: flex;
-    // gap: 50px;
-    // justify-content: center;
-    // align-items: center;
+    alignItems={{lg:"flex-start"}}
     >
       {/* <div className={css.Wr}> */}
-      <Box background={{lg: "gray"}}>
+      <Box 
+      background={{lg: "gray"}}
+      w={{lg:"100%"}}
+      >
       <ContactForm onSubmitProps={onAddContact} />
       <Filter value={filter} onChange={changeFilter}/>
       </Box>
