@@ -99,7 +99,7 @@ const reset=()=>{
       </form>
     </Box>
     </Flex>
-  </div>
+   </div>
       );    
 }
 ContactForm.propTypes={

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from "prop-types";
-import { Box } from '@chakra-ui/react';
+import { Box, Text} from '@chakra-ui/react';
 import { useEffect} from 'react';
 
 import { selectContacts, selectFilter } from 'redux/selectors';
@@ -11,11 +11,12 @@ import ContactList from 'components/ContactList';
 import{filterContacts,} from '../redux/filterSlice'
 import ContactForm from 'components/ContactForm';
 import { selectAuthenticated } from 'redux/authReducer';
+import Loader from 'components/Loader/Loader';
 
 const ContactsPage = () => {
 // -----
 const dispatch = useDispatch()
-  const{ contacts, isLoading, error, } = useSelector(selectContacts)
+  const{ contacts, isLoading, error} = useSelector(selectContacts)
   const {filter} = useSelector(selectFilter)
   const authenticated = useSelector(selectAuthenticated)
 
@@ -64,16 +65,17 @@ useEffect(()=> {
     >
      
       <Box 
-      background={{lg: "gray"}}
+      background={ "gray.100"}
       w={{lg:"100%"}}
       >
         <ContactForm onSubmitProps={onAddContact} />
         <Filter value={filter} onChange={changeFilter}/>
       </Box>
       <Box >
-{contacts && <ContactList contacts={visibleContacts} onDeleteContact={onRemoveContact}/>}      {error && <b>mistake: {error}</b>}
-      {isLoading && <p>Loading contacts...</p>}
-    
+        {error && <Text fw={"700"} color={"red.100"}>{error}</Text>}
+        {isLoading && <Loader/>}
+        {contacts && <ContactList contacts={visibleContacts} onDeleteContact={onRemoveContact}/>}      {error && <b>mistake: {error}</b>}
+
       </Box>
     </Box>
   )

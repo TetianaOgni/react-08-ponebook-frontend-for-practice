@@ -17,7 +17,8 @@ const {contacts} = useSelector(selectContacts)
   return(
     <div>
       { contacts.length !== 0 && (
-        <Flex bg="gray.100"
+        <Flex 
+        bg="gray.100"
         align="center"
         flexDir = "column"
          justify="center"
@@ -26,16 +27,15 @@ const {contacts} = useSelector(selectContacts)
           
           >
        <Box 
-       bg="white"
-        p={6}
-            rounded="md"
-             w={260}
-             pl={{base:"24px", md:"24px",lg:"24px", xl:"24px"}}
-     pr={{base:"24px", md:"24px",lg:"24px", xl:"24px"}}
-     pt={{base:"5px", md:"24px",lg:"24px", xl:"24px"}}
-     pb={{base:"15px", md:"24px",lg:"24px", xl:"24px"}}
-
-              >
+          bg="white"
+          p={6}
+          rounded="md"
+          w={260}
+          pl={{base:"24px", md:"24px",lg:"24px", xl:"24px"}}
+          pr={{base:"24px", md:"24px",lg:"24px", xl:"24px"}}
+          pt={{base:"5px", md:"24px",lg:"24px", xl:"24px"}}
+          pb={{base:"15px", md:"24px",lg:"24px", xl:"24px"}}
+      >
          <form >
            <VStack spacing={4} align="flex-start">
            <FormControl>

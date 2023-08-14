@@ -9,16 +9,18 @@ import {
   FormControl,
   FormLabel,
   Input,
-  VStack
+  VStack,
+  Text
 } from "@chakra-ui/react";
 import { selectAuthenticated } from 'redux/authReducer';
+import {selectContacts} from "../redux/selectors"
 import { Navigate } from 'react-router-dom';
 
 const LoginPage = () => {
   
   const dispatch = useDispatch()
   const authenticated = useSelector(selectAuthenticated)
- 
+  const { error} = useSelector(selectContacts)
       const formik = useFormik({
         initialValues: { 
           email: "",
@@ -68,6 +70,7 @@ const LoginPage = () => {
               </VStack>
             </form>
           </Box>
+          {error && <Text fw={"700"} color={"red.100"}>{error}</Text>}
         </Flex>
       )
 }

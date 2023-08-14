@@ -59,7 +59,7 @@ const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
                   REGISTER
                 </Button>
                 <Button colorScheme='teal' variant='link' as={NavLink} to='/login'>
-                  LOAGIN
+                  LOGIN
                 </Button>
               </>
             )}
