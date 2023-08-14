@@ -13,7 +13,9 @@ import {
 } from "@chakra-ui/react";
 import { selectAuthenticated } from 'redux/authReducer';
 import { Navigate } from 'react-router-dom';
+
 const LoginPage = () => {
+  
   const dispatch = useDispatch()
   const authenticated = useSelector(selectAuthenticated)
  

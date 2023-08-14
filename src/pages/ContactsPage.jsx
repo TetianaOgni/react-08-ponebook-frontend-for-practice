@@ -1,19 +1,16 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-
+import PropTypes from "prop-types";
+import { Box } from '@chakra-ui/react';
 import { useEffect} from 'react';
+
 import { selectContacts, selectFilter } from 'redux/selectors';
 import { deleteContactsThunk, fetchContactsThunk, postContactsThunk } from '../services/operations';
-
-// import PropTypes from "prop-types";
-// import ContactForm from './ContactForm';
 import Filter  from '../components/Filter';
 import ContactList from 'components/ContactList';
 import{filterContacts,} from '../redux/filterSlice'
 import ContactForm from 'components/ContactForm';
 import { selectAuthenticated } from 'redux/authReducer';
-// import css from "./ContactsPage.module.css"
-import { Box } from '@chakra-ui/react';
 
 const ContactsPage = () => {
 // -----
@@ -65,19 +62,36 @@ useEffect(()=> {
     justifyContent= {{lg:"center"}}
     alignItems={{lg:"flex-start"}}
     >
-      {/* <div className={css.Wr}> */}
+     
       <Box 
       background={{lg: "gray"}}
       w={{lg:"100%"}}
       >
-      <ContactForm onSubmitProps={onAddContact} />
-      <Filter value={filter} onChange={changeFilter}/>
+        <ContactForm onSubmitProps={onAddContact} />
+        <Filter value={filter} onChange={changeFilter}/>
       </Box>
+      <Box >
 {contacts && <ContactList contacts={visibleContacts} onDeleteContact={onRemoveContact}/>}      {error && <b>mistake: {error}</b>}
       {isLoading && <p>Loading contacts...</p>}
-      {/* </div> */}
-     </Box>
+    
+      </Box>
+    </Box>
   )
+}
+ContactsPage.propTypes = {
+  onAddContact: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.string,
+  filter: PropTypes.string.isRequired,
+  onRemoveContact: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 }
 
 export default ContactsPage

@@ -53,24 +53,24 @@
     } 
   } */
 
-.ContactBtn{
+/* .ContactBtn{
     display: inline-block;
     width: 70px;
     
-}
-.ContactBtn:hover,
+} */
+/* .ContactBtn:hover,
 .ContactBtn:focus{
     background: rgb(232, 223, 223);
     border: 1px solid  rgb(80, 75, 75);
     border-radius: 2px;
     padding: 2px;
     cursor: pointer;
-}
+} */
 
- .ContactName{
+ /* .ContactName{
   min-width: 150px;
   margin: 0;
 }
 .ContactNumber{
   max-width: 150px;
-} 
+}   */

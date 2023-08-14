@@ -21,8 +21,6 @@ const {contacts} = useSelector(selectContacts)
         align="center"
         flexDir = "column"
          justify="center"
-          // pb={10}
-          // pt={2.5}
           pt={{base:"5px", md:"12px", lg:"12px", xl:"25px"}}
           pb={{base:"10px", md:"24px",lg:"50px", xl:"50px"}}
           
@@ -62,24 +60,14 @@ const {contacts} = useSelector(selectContacts)
 
 Filter.propTypes = {
   value: PropTypes.string.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })).isRequired,
     onChange: PropTypes.func,
   };
 
 export default Filter
 
-// {/* <Box bg="white" pt={2} pb={4} pl={5} pr={2} rounded="md" w={260}>
-//          <form >
-//            <VStack spacing={4} align="flex-start">
-//            <FormControl>
-//                <FormLabel htmlFor="number">Find contacts by number
-//                 <Input
-//                   type="number"
-//                   onChange={onChange}
-//                   variant="filled"
-//                   value={value}
-//                 />
-//                </FormLabel>
-//              </FormControl>
-//             </VStack>
-//          </form>
-//        </Box> */}

@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from "prop-types";
 import shortid from 'shortid';
-// import css from './ContactForm.module.css'
-// import { useFormik } from "formik";
 import {
   Box,
   Button,
@@ -12,10 +10,14 @@ import {
   Input,
   VStack
 } from "@chakra-ui/react";
+
+
 const ContactForm = ({onSubmitProps}) => {
- const [name, setName] = useState('')
- const [number, setNumber] = useState('')
+
+const [name, setName] = useState('')
+const [number, setNumber] = useState('')
 const inputNameRef = useRef(null)
+
 useEffect(()=>{
   inputNameRef.current.focus()
 },[])
@@ -51,7 +53,6 @@ const reset=()=>{
     <Flex bg="gray.100"
     align="center"
       justify="center"
-      // h="30vh"
       pt={{base:"10px", md:"24px", lg:"50px", xl:"50px"}}
       pb={{base:"5px", md:"12px", lg:"12px", xl:"25px"}}
       >
@@ -87,6 +88,7 @@ const reset=()=>{
               variant="filled"
               onChange={handleInputChange}
               value={number}
+              maxLength={14}
               required
             />
           </FormControl>
@@ -106,30 +108,4 @@ ContactForm.propTypes={
 
 export default ContactForm
   
-          // <form onSubmit={handleSubmit} className={css.form}>
-          //   <label htmlFor={nameInputId} className={css.labelName}>Name</label>
-          //   <input
-          //   className={css.inputName}
-          //     value={name}
-          //     onChange={handleInputChange}
-          //     type="text"
-          //     name="name"
-          //     ref={inputNameRef}
-          //     id={nameInputId}
-          //     pattern="^[A-Za-z\u0080-\uFFFF ']+$"
-          //     title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          //     required
-          //   />
-          //   < label htmlFor={phoneInputId} className={css.labelNumber}>Number</label>
-          //   <input
-          //   className={css.inputNumber}
-          //     value={number}
-          //     onChange={handleInputChange}
-          //     type="tel"
-          //     name="number"
-          //     id={phoneInputId}
-          //     pattern="^(\+?[0-9.\(\)\-\s]*)$"           
-          //     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          //     required/>
-          //   <button className={css.formBtn} type="submit">Add contact</button>
-          // </form>
+  

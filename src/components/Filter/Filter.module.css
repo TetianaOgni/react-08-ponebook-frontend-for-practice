@@ -1,4 +1,4 @@
-.labelFilter{
+/* .labelFilter{
     display: flex;
     flex-direction: column;
      border: 2px solid  rgb(232, 223, 223);
@@ -7,6 +7,6 @@
 .inputFilter{
   width: 200px;
   /* border-color: black !important; */
-  outline: 1px solid rgb(154, 152, 152);
+  /* outline: 1px solid rgb(154, 152, 152);
   border-radius: 3px;
-}
+} */ 
