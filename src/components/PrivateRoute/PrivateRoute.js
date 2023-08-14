@@ -1,5 +1,6 @@
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux";
 import {  Navigate} from "react-router-dom";
+import PropTypes from "prop-types";
 import { selectAuthenticated } from "redux/authReducer";
 
 
@@ -7,4 +8,9 @@ const PrivateRoute = ({children, redirectTo = '/'}) => {
     const authenticated = useSelector(selectAuthenticated)
     return authenticated ? children : <Navigate to={redirectTo}/>
 }
+
+PrivateRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export default PrivateRoute

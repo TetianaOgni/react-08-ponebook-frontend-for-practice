@@ -16,10 +16,8 @@ export const clearToken = () => {
 export const registerUserThunk = createAsyncThunk(
     'auth/register', 
     async (userData, thunkApi) => {
-        console.log(1, userData)
         try{
          const {data} = await $instance.post('/users/signup', userData)
-         console.log(data)
          setToken(data.token);
          return data
         }
@@ -31,11 +29,9 @@ export const registerUserThunk = createAsyncThunk(
 export const loginUserThunk = createAsyncThunk(
         'auth/login', 
         async (userData, thunkApi) => {
-            console.log(2, userData)
            
             try{
              const {data} = await $instance.post('/users/login', userData)
-             console.log(data)
              setToken(data.token);
         
              return data
@@ -53,11 +49,9 @@ export const loginUserThunk = createAsyncThunk(
         try{
          setToken(token)
          const {data} = await $instance.get('/users/current')
-         console.log("refresh", data)
          return data
         }
         catch(error){
-            console.log("errorlogout", error)
             return thunkApi.rejectWithValue(error.message)
         }
 })
@@ -67,7 +61,6 @@ export const logoutUserThunk = createAsyncThunk(
     async (_, thunkApi) => {
         try{
          const {data} = await $instance.post('/users/logout')
-         console.log(data)
          clearToken()
          return data
         }

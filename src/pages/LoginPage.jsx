@@ -27,7 +27,6 @@ const LoginPage = () => {
           password: "",  
         },
         onSubmit: (values) => {
-        console.log(values)
         dispatch(loginUserThunk(values))
         }
       });

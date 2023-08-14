@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from "prop-types";
 import { Box, Text} from '@chakra-ui/react';
 import { useEffect} from 'react';
 
@@ -14,7 +13,7 @@ import { selectAuthenticated } from 'redux/authReducer';
 import Loader from 'components/Loader/Loader';
 
 const ContactsPage = () => {
-// -----
+
 const dispatch = useDispatch()
   const{ contacts, isLoading, error} = useSelector(selectContacts)
   const {filter} = useSelector(selectFilter)
@@ -27,7 +26,6 @@ useEffect(()=> {
  const onAddContact=(data)=>{
    if (!authenticated) return
 
-   console.log("data", data)
     const { name} = data;
     const isExist = contacts.some(contact => contact.name && 
     contact.name.toLowerCase() === name.toLowerCase());
@@ -44,7 +42,6 @@ useEffect(()=> {
     };
 
   const changeFilter = event=>{
-    console.log("event", event.currentTarget)
     dispatch(filterContacts(event.currentTarget.value));
   }
 
@@ -80,20 +77,6 @@ useEffect(()=> {
     </Box>
   )
 }
-ContactsPage.propTypes = {
-  onAddContact: PropTypes.func.isRequired,
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  isLoading: PropTypes.bool.isRequired,
-  error: PropTypes.string,
-  filter: PropTypes.string.isRequired,
-  onRemoveContact: PropTypes.func.isRequired,
-  changeFilter: PropTypes.func.isRequired,
-}
+
 
 export default ContactsPage

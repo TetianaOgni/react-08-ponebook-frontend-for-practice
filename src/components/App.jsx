@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAuthenticated, selectToken } from "redux/authReducer";
 import { logoutUserThunk, refreshUserThunk } from "redux/operations";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
-import PropTypes from "prop-types";
 
 
 const HomePage = lazy(()=> import ("pages/HomePage"))
@@ -83,10 +82,6 @@ const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
       </div>
   );
 }
-
-App.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default App
 

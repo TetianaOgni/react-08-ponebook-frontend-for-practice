@@ -29,7 +29,6 @@ const RegisterPage = () => {
           
         },
         onSubmit: (values) => {
-        console.log(values)
         dispatch(registerUserThunk(values))
     
         }
