@@ -20,19 +20,21 @@ const LoginPage = () => {
   
   const dispatch = useDispatch()
   const authenticated = useSelector(selectAuthenticated)
-  const { error} = useSelector(selectContacts)
+  const {error} = useSelector(selectContacts)
+  // console.log(error)
       const formik = useFormik({
         initialValues: { 
           email: "",
           password: "",  
         },
+
         onSubmit: (values) => {
         dispatch(loginUserThunk(values))
         }
       });
 
       if (authenticated) return <Navigate to="/contacts"/>
-
+      if (error) return console.log(error)
       return (
         <Flex bg="gray.100" align="center" justify="center" h="100vh">
           <Box bg="white" p={6} rounded="md">
@@ -69,7 +71,7 @@ const LoginPage = () => {
               </VStack>
             </form>
           </Box>
-          {error && <Text fw={"700"} color={"red.100"}>{error}</Text>}
+          {error !== null && <Text fw={"700"} color={"red.100"}>{error}</Text>}
         </Flex>
       )
 }

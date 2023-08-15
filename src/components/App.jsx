@@ -20,6 +20,7 @@ const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const authenticated = useSelector(selectAuthenticated)
+   
 
   useEffect(() => {
     if (!token || authenticated) return;
@@ -48,6 +49,7 @@ const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
               <Button colorScheme='teal' variant='link' as={NavLink} to='/contacts'>
                     CONTACTS
                   </Button>
+                  <></>
                   <Button colorScheme='teal' variant='link' onClick={handleLogout} >
                     LOGOUT
                   </Button>

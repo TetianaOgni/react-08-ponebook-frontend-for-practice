@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { Box, Text} from '@chakra-ui/react';
+import { Box} from '@chakra-ui/react';
 import { useEffect} from 'react';
 
 import { selectContacts, selectFilter } from 'redux/selectors';
@@ -69,7 +69,7 @@ useEffect(()=> {
         <Filter value={filter} onChange={changeFilter}/>
       </Box>
       <Box >
-        {error && <Text fw={"700"} color={"red.100"}>{error}</Text>}
+        {/* {error && <Text fw={"700"} color={"red"}>{error}</Text>} */}
         {isLoading && <Loader/>}
         {contacts && <ContactList contacts={visibleContacts} onDeleteContact={onRemoveContact}/>}      {error && <b>mistake: {error}</b>}
 

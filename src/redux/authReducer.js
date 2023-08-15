@@ -55,8 +55,10 @@ const authSlice = createSlice({
     state.userData = action.payload;
    })
    .addCase(refreshUserThunk.rejected, (state, action) => {
+    console.log(1, action)
     state.isLoading = false;
     state.error = action.payload
+    console.log("error", action.payload)
    })
     //  -------logout---------
     .addCase(logoutUserThunk.pending, state => {
