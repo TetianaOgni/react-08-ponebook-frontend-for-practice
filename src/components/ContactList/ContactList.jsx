@@ -7,32 +7,33 @@ import css from './ContactList.module.css'
 const ContactList = ({contacts, onDeleteContact}) => {
   
  return (
+
       <List
        spacing={3} 
        display="flex"
        alignItems="center"
        flexDir = "column"
        justify="center"
-       pt={{ base: "10px", md: "10px", lg: "40px", xl: "40px" }}
-       pb={{ base: "10px", md: "10px", lg: "40px", xl: "40px" }}
-       w={{lg:"600px", xl:"800px"}}
-      
+       p={{ base: "10px", md: "10px", lg: "24px", xl: "24px" }}
+       bg="white"
+       borderRadius={"8px"}
+       maxHeight={{lg:"450px"}}
+      //  w={[320, 300, 400, 400]}
+      //  overflow={{lg:"auto"}}
        >
       {contacts.map(({name, number, id}) => (
       
         <ListItem key={id}
        
         >
-            <Flex alignItems="center" gap={{base:"5px", md:"10px"}}>
+            <Flex alignItems="center" gap={{base:"15px", md:"10px"}}>
             <ListIcon as={PhoneIcon} color='teal' m="0px" />
             <Box className={css.box}
               display={{base: "block", md: "flex", lg: "flex", xl:"flex"}}
               justifyContent={"space-between"} 
               gap={{base:"5px", md:"10px"}}
-              border={{ base: '1px solid teal', md:'none' }}
               w={[200, 300, 400, 400]}
               borderRadius={{base:"7px", md:"0px"}}
-              padding={{base:"10px 20px", md:"0px 0px"}}
               
             >
                 <Text>{name}:</Text>
@@ -42,7 +43,7 @@ const ContactList = ({contacts, onDeleteContact}) => {
                 <Button colorScheme='red'
                  size='xs'
                  hover={{ backgroundColor: 'red.500',
-                  color: 'white' }} // Стили для ховера
+                  color: 'white' }} 
                   cursor='pointer'
                   onClick={() => {onDeleteContact(id)}}>
                   Delete

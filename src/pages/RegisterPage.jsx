@@ -12,7 +12,9 @@ import {
   Input,
   VStack
 } from "@chakra-ui/react";
-import { selectAuthenticated } from "redux/authReducer";
+// import { selectAuthenticated } from "redux/authReducer";
+import { selectAuthenticated } from "redux/selectors";
+
 import { Navigate } from "react-router-dom";
 
 const RegisterPage = () => {
@@ -63,6 +65,7 @@ const RegisterPage = () => {
                     onChange={formik.handleChange}
                     value={formik.values.email}
                     required
+                    maxLength={30}
                   />
                 </FormControl>
                 <FormControl>

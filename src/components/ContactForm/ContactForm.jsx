@@ -11,7 +11,6 @@ import {
   VStack
 } from "@chakra-ui/react";
 
-
 const ContactForm = ({onSubmitProps}) => {
 
 const [name, setName] = useState('')
@@ -53,8 +52,11 @@ const reset=()=>{
     <Flex bg="gray.100"
     align="center"
       justify="center"
-      pt={{base:"10px", md:"24px", lg:"50px", xl:"50px"}}
-      pb={{base:"5px", md:"12px", lg:"12px", xl:"25px"}}
+      // pt={{base:"10px", md:"24px", lg:"50px", xl:"50px"}}
+
+      pt={{base:"10px", md:"24px", lg:"0px"}}
+      // pb={{base:"5px", md:"12px", lg:"12px", xl:"25px"}}
+      pb={{base:"5px", md:"12px"}}
       >
     <Box bg="white"
      pl={{base:"24px", md:"24px",lg:"24px", xl:"24px"}}

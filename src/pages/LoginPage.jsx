@@ -12,7 +12,9 @@ import {
   VStack,
   Text
 } from "@chakra-ui/react";
-import { selectAuthenticated } from 'redux/authReducer';
+// import { selectAuthenticated } from 'redux/authReducer';
+import { selectAuthenticated } from 'redux/selectors';
+
 import {selectContacts} from "../redux/selectors"
 import { Navigate } from 'react-router-dom';
 

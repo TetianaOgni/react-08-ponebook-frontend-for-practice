@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
-import { useSelector} from "react-redux/es/hooks/useSelector";
+// import { useSelector} from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux";
+
 import { selectContacts } from "redux/selectors";
 import {
   Box,
@@ -23,8 +25,8 @@ const {contacts} = useSelector(selectContacts)
         flexDir = "column"
          justify="center"
           pt={{base:"5px", md:"12px", lg:"12px", xl:"25px"}}
-          pb={{base:"10px", md:"24px",lg:"50px", xl:"50px"}}
-          
+          // pb={{base:"10px", md:"24px",lg:"50px", xl:"50px"}}
+          pb={{base:"10px", md:"24px",lg:"0px", xl:"0px"}}
           >
        <Box 
           bg="white"

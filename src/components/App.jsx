@@ -3,9 +3,12 @@ import {NavLink, Route, Routes} from 'react-router-dom'
 import {
   Button,
   Stack,
+  Box,
+  Text,
 } from '@chakra-ui/react'
 import { useDispatch, useSelector } from "react-redux";
-import { selectAuthenticated, selectToken } from "redux/authReducer";
+// import { selectAuthenticated, selectToken } from "redux/authReducer";
+import { selectAuthenticated, selectToken, selectUserData } from "redux/selectors";
 import { logoutUserThunk, refreshUserThunk } from "redux/operations";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 
@@ -16,11 +19,12 @@ const LoginPage = lazy(()=> import ("pages/LoginPage"))
 const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
 
 
- const App = () => {
-  const dispatch = useDispatch();
-  const token = useSelector(selectToken);
-  const authenticated = useSelector(selectAuthenticated)
-   
+const App = () => {
+const dispatch = useDispatch();
+const token = useSelector(selectToken);
+const authenticated = useSelector(selectAuthenticated)
+const userData = useSelector(selectUserData)
+console.log("userData", userData)
 
   useEffect(() => {
     if (!token || authenticated) return;
@@ -38,32 +42,61 @@ const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
       >
        <nav>
        <Stack direction='row' spacing={4} align='center'
-        p={{base:"5px", md:"10px", lg:"15px", xl:"20px"}}
-        fontSize={{base:"5px", md:"10px", lg:"15px", xl:"20px"}}
+       justifyContent={"space-between"}
+       gap='5px'
+       p={{base:"10px", md:"10px", lg:"15px", xl:"20px"}}
          >
-          <Button colorScheme='teal' variant='link'as={NavLink} to='/'>
+      
+          <Button colorScheme='teal' variant='link'as={NavLink} to='/'
+           fontSize={{base:'10px', md:'15px', lg:'15px', xl:'20px'}} 
+          >
           HOME
           </Button>
             {authenticated ? (
-              <>
-              <Button colorScheme='teal' variant='link' as={NavLink} to='/contacts'>
+              <Box display={"flex"}
+               alignItems={"center"}
+               gap={{base:"10px", md:"20px", lg:"20px", xl:"20px"}}
+              >
+              {userData!== null && <Text 
+               fontSize={{base:"7px", md:"10px", lg:"15px", xl:"20px"}}
+               minW={{base:"80px", md:"300px"}}
+               whiteSpace={"nowrap"} 
+               overflow={"hidden"}
+               color='purple'
+               fontWeight={600}
+               >
+                {userData.email}
+                </Text>}
+              <Button 
+              fontSize={{base:'10px', md:'15px', lg:'15px', xl:'20px'}}
+               colorScheme='teal'  variant='link' as={NavLink} to='/contacts'>
                     CONTACTS
                   </Button>
-                  <></>
-                  <Button colorScheme='teal' variant='link' onClick={handleLogout} >
-                    LOGOUT
-                  </Button>
-              </> 
+                    <Button  
+                    fontSize={{base:'10px', md:'15px', lg:'15px', xl:'20px'}}
+                     colorScheme='teal'  variant='link' onClick={handleLogout} >
+                      LOGOUT
+                    </Button>
+              </Box> 
              ) : (
-              <>
-                <Button colorScheme='teal' variant='link' as={NavLink} to='/register'>
+              <Box
+              display={"flex"}
+              alignItems={"center"}
+              gap={"10px"}             
+              >
+                <Button  
+                fontSize={{base:'10px', md:'15px', lg:'15px', xl:'20px'}}
+                colorScheme='teal' variant='link' as={NavLink} to='/register'>
                   REGISTER
                 </Button>
-                <Button colorScheme='teal' variant='link' as={NavLink} to='/login'>
+                <Button 
+                fontSize={{base:'10px', md:'15px', lg:'15px', xl:'20px'}}
+                colorScheme='teal' variant='link' as={NavLink} to='/login'>
                   LOGIN
                 </Button>
-              </>
+              </Box>
             )}
+         
        </Stack>
        </nav>
       </header>  

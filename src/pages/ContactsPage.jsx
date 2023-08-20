@@ -9,7 +9,9 @@ import Filter  from '../components/Filter';
 import ContactList from 'components/ContactList';
 import{filterContacts,} from '../redux/filterSlice'
 import ContactForm from 'components/ContactForm';
-import { selectAuthenticated } from 'redux/authReducer';
+// import { selectAuthenticated } from 'redux/authReducer';
+import { selectAuthenticated } from 'redux/selectors';
+
 import Loader from 'components/Loader/Loader';
 
 const ContactsPage = () => {
@@ -59,19 +61,25 @@ useEffect(()=> {
     gap={{lg:"50px"}}
     justifyContent= {{lg:"center"}}
     alignItems={{lg:"flex-start"}}
+    background={{lg:"gray.100"}}
+    pt={{lg:"50px", xl:"50px"}}
+    pb={{lg:"50px", xl:"50px"}}
+    pr={{ lg: "50px", xl:"50px"}}
+    pl={{lg: "50px", xl:"50px"}}
     >
      
       <Box 
-      background={ "gray.100"}
-      w={{lg:"100%"}}
+      // background={ "gray.100"}
+      w={{lg:"30%"}}
       >
         <ContactForm onSubmitProps={onAddContact} />
         <Filter value={filter} onChange={changeFilter}/>
       </Box>
-      <Box >
+      <Box   
+      >
         {/* {error && <Text fw={"700"} color={"red"}>{error}</Text>} */}
         {isLoading && <Loader/>}
-        {contacts && <ContactList contacts={visibleContacts} onDeleteContact={onRemoveContact}/>}      {error && <b>mistake: {error}</b>}
+        {contacts && <ContactList contacts={visibleContacts} onDeleteContact={onRemoveContact} />}      {error && <b>mistake: {error}</b>}
 
       </Box>
     </Box>

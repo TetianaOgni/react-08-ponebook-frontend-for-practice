@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { registerUserThunk, loginUserThunk, refreshUserThunk, logoutUserThunk } from "./operations";
-
+// import {selectLoading, selectError, selectToken, selectUserData, selectAuthenticated} from "../redux/selectors"
 const initialState = {
     userData: null,
     authenticated: false,
@@ -55,10 +55,8 @@ const authSlice = createSlice({
     state.userData = action.payload;
    })
    .addCase(refreshUserThunk.rejected, (state, action) => {
-    console.log(1, action)
     state.isLoading = false;
     state.error = action.payload
-    console.log("error", action.payload)
    })
     //  -------logout---------
     .addCase(logoutUserThunk.pending, state => {
@@ -77,10 +75,10 @@ const authSlice = createSlice({
        })
 })
 
-export const selectLoading = state => state.auth.isLoading
-export const selectError = state => state.auth.error
-export const selectToken = state => state.auth.token
-export const selectUserData = state => state.auth.userData
-export const selectAuthenticated = state => state.auth.authenticated
+// export const selectLoading = state => state.auth.isLoading
+// export const selectError = state => state.auth.error
+// export const selectToken = state => state.auth.token
+// export const selectUserData = state => state.auth.userData
+// export const selectAuthenticated = state => state.auth.authenticated
 
 export const authReducer = authSlice.reducer
