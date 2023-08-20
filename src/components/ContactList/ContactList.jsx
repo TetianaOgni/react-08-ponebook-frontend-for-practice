@@ -18,8 +18,7 @@ const ContactList = ({contacts, onDeleteContact}) => {
        bg="white"
        borderRadius={"8px"}
        maxHeight={{lg:"450px"}}
-      //  w={[320, 300, 400, 400]}
-      //  overflow={{lg:"auto"}}
+       overflowY={{lg:"auto"}}
        >
       {contacts.map(({name, number, id}) => (
       
