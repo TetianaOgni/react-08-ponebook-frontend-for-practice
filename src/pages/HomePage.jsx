@@ -45,7 +45,7 @@ const HomePage = () => {
               You can add, search by name, and delete your contacts.
           </Text>
           <Text fontWeight={"700"} >
-            Good luck!!!!
+            Good luck!!!
           </Text>
 
       </Box>
