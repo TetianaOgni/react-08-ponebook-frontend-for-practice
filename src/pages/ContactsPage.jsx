@@ -20,6 +20,7 @@ const dispatch = useDispatch()
   const{ contacts, isLoading, error} = useSelector(selectContacts)
   const {filter} = useSelector(selectFilter)
   const authenticated = useSelector(selectAuthenticated)
+  // console.log("authenticated", authenticated)
 
 useEffect(()=> {
   dispatch(fetchContactsThunk())

@@ -26,6 +26,7 @@ import {fetchContactsThunk, postContactsThunk, deleteContactsThunk} from '../ser
             })
             .addCase(fetchContactsThunk.rejected, (state, action) => {
               state.isLoading = false;
+              // console.log('action.payload', action.payload)
               state.error = action.payload;
             })
             // для додавання контакту з бекенду 

@@ -23,7 +23,7 @@ const LoginPage = () => {
   const dispatch = useDispatch()
   const authenticated = useSelector(selectAuthenticated)
   const {error} = useSelector(selectContacts)
-  // console.log(error)
+  
       const formik = useFormik({
         initialValues: { 
           email: "",

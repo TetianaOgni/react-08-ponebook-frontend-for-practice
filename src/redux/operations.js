@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 export const $instance = axios.create({
-    baseURL: 'https://connections-api.herokuapp.com',
+    baseURL: 'http://localhost:4400/',
 })
 export const setToken = token => {
     $instance.defaults.headers['Authorization'] = `Bearer ${token}`
@@ -22,6 +22,8 @@ export const registerUserThunk = createAsyncThunk(
          return data
         }
         catch(error){
+            // console.log("register!", error)
+
             return thunkApi.rejectWithValue(error.message)
         }
     })
@@ -37,7 +39,7 @@ export const loginUserThunk = createAsyncThunk(
              return data
             }
             catch(error){
-                console.log("login", error)
+                // console.log("login!", error)
                 return thunkApi.rejectWithValue(error.message)
             }
  })

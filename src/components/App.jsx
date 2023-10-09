@@ -24,7 +24,6 @@ const dispatch = useDispatch();
 const token = useSelector(selectToken);
 const authenticated = useSelector(selectAuthenticated)
 const userData = useSelector(selectUserData)
-console.log("userData", userData)
 
   useEffect(() => {
     if (!token || authenticated) return;

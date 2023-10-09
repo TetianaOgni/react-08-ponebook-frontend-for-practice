@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-// import { useSelector} from "react-redux/es/hooks/useSelector";
 import { useSelector } from "react-redux";
 
 import { selectContacts } from "redux/selectors";

@@ -22,7 +22,7 @@ const RegisterPage = () => {
   const dispatch = useDispatch()
 
   const authenticated = useSelector(selectAuthenticated)
-  
+
       const formik = useFormik({
         initialValues: {
           name: "",  
@@ -35,8 +35,12 @@ const RegisterPage = () => {
     
         }
       });
-  if (authenticated) return < Navigate to='/contacts' />  
-      return (
+  if (authenticated){
+    console.log(111)
+    return < Navigate to='/contacts' />  
+  }
+
+  return (
         <Flex bg="gray.100" align="center" justify="center" h="100vh">
           <div className={css.Container}>
           <Box bg="white" p={6} rounded="md">

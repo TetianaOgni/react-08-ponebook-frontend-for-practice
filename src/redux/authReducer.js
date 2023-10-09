@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { registerUserThunk, loginUserThunk, refreshUserThunk, logoutUserThunk } from "./operations";
-// import {selectLoading, selectError, selectToken, selectUserData, selectAuthenticated} from "../redux/selectors"
+
 const initialState = {
     userData: null,
     authenticated: false,
@@ -22,7 +22,7 @@ const authSlice = createSlice({
    .addCase(registerUserThunk.fulfilled, (state, action) => {
     state.isLoading = false;
     state.authenticated = true;
-    state.userData = action.payload.user;
+    state.userData = action.payload.user;//payload - обʼєкт (має дві властивості user і token)який повертається нам з бекенду 
     state.token = action.payload.token
    })
    .addCase(registerUserThunk.rejected, (state, action) => {
@@ -75,10 +75,5 @@ const authSlice = createSlice({
        })
 })
 
-// export const selectLoading = state => state.auth.isLoading
-// export const selectError = state => state.auth.error
-// export const selectToken = state => state.auth.token
-// export const selectUserData = state => state.auth.userData
-// export const selectAuthenticated = state => state.auth.authenticated
 
 export const authReducer = authSlice.reducer
