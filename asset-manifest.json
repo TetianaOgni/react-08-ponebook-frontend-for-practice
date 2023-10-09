@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-08-ponebook-frontend-for-practice/static/css/main.a038c68e.css",
-    "main.js": "/react-08-ponebook-frontend-for-practice/static/js/main.84e487d5.js",
-    "static/js/833.8ed71a76.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/833.8ed71a76.chunk.js",
+    "main.js": "/react-08-ponebook-frontend-for-practice/static/js/main.4b90ee6b.js",
+    "static/js/833.3ec0006d.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/833.3ec0006d.chunk.js",
     "static/js/432.946c6882.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/432.946c6882.chunk.js",
     "static/js/637.f38add1b.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/637.f38add1b.chunk.js",
     "static/css/668.02e961f1.chunk.css": "/react-08-ponebook-frontend-for-practice/static/css/668.02e961f1.chunk.css",
@@ -13,8 +13,8 @@
     "static/media/screen-phone-and-notebook-sm.jpg": "/react-08-ponebook-frontend-for-practice/static/media/screen-phone-and-notebook-sm.57a504a636f0f20eb63f.jpg",
     "index.html": "/react-08-ponebook-frontend-for-practice/index.html",
     "main.a038c68e.css.map": "/react-08-ponebook-frontend-for-practice/static/css/main.a038c68e.css.map",
-    "main.84e487d5.js.map": "/react-08-ponebook-frontend-for-practice/static/js/main.84e487d5.js.map",
-    "833.8ed71a76.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/833.8ed71a76.chunk.js.map",
+    "main.4b90ee6b.js.map": "/react-08-ponebook-frontend-for-practice/static/js/main.4b90ee6b.js.map",
+    "833.3ec0006d.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/833.3ec0006d.chunk.js.map",
     "432.946c6882.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/432.946c6882.chunk.js.map",
     "637.f38add1b.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/637.f38add1b.chunk.js.map",
     "668.02e961f1.chunk.css.map": "/react-08-ponebook-frontend-for-practice/static/css/668.02e961f1.chunk.css.map",
@@ -23,6 +23,6 @@
   },
   "entrypoints": [
     "static/css/main.a038c68e.css",
-    "static/js/main.84e487d5.js"
+    "static/js/main.4b90ee6b.js"
   ]
 }
