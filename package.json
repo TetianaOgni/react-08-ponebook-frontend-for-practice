@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://TetianaOgni.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://TetianaOgni.github.io/react-08-ponebook-frontend-for-practice/",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.0",
     "@chakra-ui/react": "^2.8.0",
