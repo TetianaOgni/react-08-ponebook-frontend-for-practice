@@ -1,10 +1,11 @@
 import { Suspense, lazy, useEffect } from "react";
-import {NavLink, Route, Routes} from 'react-router-dom'
+import {Link, NavLink, Route, Routes} from 'react-router-dom'
 import {
   Button,
   Stack,
   Box,
   Text,
+  Image
 } from '@chakra-ui/react'
 import { useDispatch, useSelector } from "react-redux";
 // import { selectAuthenticated, selectToken } from "redux/authReducer";
@@ -17,7 +18,8 @@ const HomePage = lazy(()=> import ("pages/HomePage"))
 const RegisterPage = lazy(()=> import ("pages/RegisterPage"))
 const LoginPage = lazy(()=> import ("pages/LoginPage"))
 const ContactsPage = lazy(()=> import ("pages/ContactsPage"))
-
+const ProfilePage = lazy(()=> import ("pages/ProfilePage"))
+const ProfileUpdatePage = lazy(()=> import ("pages/ProfileUpdatePage"))
 
 const App = () => {
 const dispatch = useDispatch();
@@ -56,7 +58,15 @@ const userData = useSelector(selectUserData)
                alignItems={"center"}
                gap={{base:"10px", md:"20px", lg:"20px", xl:"20px"}}
               >
-              {userData!== null && <Text 
+              {userData!== null && 
+              <>
+               <Link to={'/profile'}>Profile</Link>
+              <Image src='https://bit.ly/dan-abramov' 
+              alt='Dan Abramov'
+               boxSize='30px'
+               objectFit='cover'
+               borderRadius={50}/>
+              <Text 
                fontSize={{base:"7px", md:"10px", lg:"15px", xl:"20px"}}
                minW={{base:"80px", md:"300px"}}
                whiteSpace={"nowrap"} 
@@ -65,7 +75,7 @@ const userData = useSelector(selectUserData)
                fontWeight={600}
                >
                 {userData.email}
-                </Text>}
+                </Text></>}
               <Button 
               fontSize={{base:'10px', md:'15px', lg:'15px', xl:'20px'}}
                colorScheme='teal'  variant='link' as={NavLink} to='/contacts'>
@@ -110,6 +120,19 @@ const userData = useSelector(selectUserData)
                 <ContactsPage/>
               </PrivateRoute>
             }/>
+
+             <Route path='/profile/update' element={
+              <PrivateRoute redirectTo='/login'>
+                <ProfileUpdatePage/>
+              </PrivateRoute>
+              }/>
+            <Route path='/profile' element={
+              <PrivateRoute redirectTo='/login'>
+                <ProfilePage/>
+              </PrivateRoute>
+            }/>
+
+
           </Routes>
         </Suspense>
       </main>

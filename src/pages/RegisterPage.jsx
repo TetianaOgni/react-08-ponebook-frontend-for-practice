@@ -36,7 +36,7 @@ const RegisterPage = () => {
         }
       });
   if (authenticated){
-    console.log(111)
+    console.log('authenticated', authenticated)//
     return < Navigate to='/contacts' />  
   }
 

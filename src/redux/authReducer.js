@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { registerUserThunk, loginUserThunk, refreshUserThunk, logoutUserThunk } from "./operations";
+import { registerUserThunk, loginUserThunk, refreshUserThunk, logoutUserThunk, updateAvatarUserThunk} from "./operations";
 
 const initialState = {
     userData: null,
@@ -73,7 +73,22 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload
        })
-})
 
+       //  -------update avatar---------
+       .addCase(updateAvatarUserThunk.pending, state => {
+            state.isLoading = true;
+            state.error = null;
+           })
+        .addCase(updateAvatarUserThunk.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.authenticated = true;
+            state.userData.avatarUrl = action.payload;
+            
+           })
+        .addCase(updateAvatarUserThunk.rejected, (state, action) => {
+            state.isLoading = false;
+            state.error = action.payload
+})
+})
 
 export const authReducer = authSlice.reducer
