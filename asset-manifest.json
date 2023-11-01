@@ -1,28 +1,32 @@
 {
   "files": {
     "main.css": "/react-08-ponebook-frontend-for-practice/static/css/main.a038c68e.css",
-    "main.js": "/react-08-ponebook-frontend-for-practice/static/js/main.bc507cc6.js",
+    "main.js": "/react-08-ponebook-frontend-for-practice/static/js/main.23018b33.js",
     "static/js/833.3ec0006d.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/833.3ec0006d.chunk.js",
-    "static/js/432.87352ed4.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/432.87352ed4.chunk.js",
+    "static/js/432.800d3275.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/432.800d3275.chunk.js",
     "static/js/637.f38add1b.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/637.f38add1b.chunk.js",
     "static/css/668.02e961f1.chunk.css": "/react-08-ponebook-frontend-for-practice/static/css/668.02e961f1.chunk.css",
     "static/js/668.b7800a86.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/668.b7800a86.chunk.js",
-    "static/js/685.e55f06aa.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/685.e55f06aa.chunk.js",
+    "static/js/373.c3702b60.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/373.c3702b60.chunk.js",
+    "static/js/98.5a17c498.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/98.5a17c498.chunk.js",
+    "static/js/685.d4e34eb4.chunk.js": "/react-08-ponebook-frontend-for-practice/static/js/685.d4e34eb4.chunk.js",
     "static/media/screen-phone-and-notebook-bg.jpg": "/react-08-ponebook-frontend-for-practice/static/media/screen-phone-and-notebook-bg.1024a0421801b59f15da.jpg",
     "static/media/screen-phone-and-notebook-md.jpg": "/react-08-ponebook-frontend-for-practice/static/media/screen-phone-and-notebook-md.8912ff4671df19562320.jpg",
     "static/media/screen-phone-and-notebook-sm.jpg": "/react-08-ponebook-frontend-for-practice/static/media/screen-phone-and-notebook-sm.57a504a636f0f20eb63f.jpg",
     "index.html": "/react-08-ponebook-frontend-for-practice/index.html",
     "main.a038c68e.css.map": "/react-08-ponebook-frontend-for-practice/static/css/main.a038c68e.css.map",
-    "main.bc507cc6.js.map": "/react-08-ponebook-frontend-for-practice/static/js/main.bc507cc6.js.map",
+    "main.23018b33.js.map": "/react-08-ponebook-frontend-for-practice/static/js/main.23018b33.js.map",
     "833.3ec0006d.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/833.3ec0006d.chunk.js.map",
-    "432.87352ed4.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/432.87352ed4.chunk.js.map",
+    "432.800d3275.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/432.800d3275.chunk.js.map",
     "637.f38add1b.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/637.f38add1b.chunk.js.map",
     "668.02e961f1.chunk.css.map": "/react-08-ponebook-frontend-for-practice/static/css/668.02e961f1.chunk.css.map",
     "668.b7800a86.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/668.b7800a86.chunk.js.map",
-    "685.e55f06aa.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/685.e55f06aa.chunk.js.map"
+    "373.c3702b60.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/373.c3702b60.chunk.js.map",
+    "98.5a17c498.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/98.5a17c498.chunk.js.map",
+    "685.d4e34eb4.chunk.js.map": "/react-08-ponebook-frontend-for-practice/static/js/685.d4e34eb4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a038c68e.css",
-    "static/js/main.bc507cc6.js"
+    "static/js/main.23018b33.js"
   ]
 }
